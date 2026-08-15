@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 7 requires Node 20.19+ / 22.12+
+  NODE_VERSION = "22"
+
+# SPA fallback: serve index.html for all client-side routes
+# (/, /events, /dashboard, /my-registrations, /auth, ...)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
