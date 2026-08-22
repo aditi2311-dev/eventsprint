@@ -1,5 +1,9 @@
 [build]
+<<<<<<< HEAD
   command = "npx convex codegen && npm run build"
+=======
+ command = "npx convex codegen && npm run build"
+>>>>>>> 107956d884f93d3bff249414049a9e21189bb6d2
   publish = "dist"
 
 [build.environment]
