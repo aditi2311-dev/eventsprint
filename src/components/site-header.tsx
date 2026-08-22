@@ -51,6 +51,12 @@ function AuthMenu() {
     return (user?.email ?? "ES").slice(0, 2).toUpperCase();
   }, [user]);
 
+  const displayName = useMemo(() => {
+    if (user?.name?.trim()) return user.name.trim();
+    if (user?.email) return user.email.split("@")[0];
+    return "EventSprint member";
+  }, [user]);
+
   const handleSignOut = async () => {
     await signOut();
     navigate("/");
@@ -104,7 +110,7 @@ function AuthMenu() {
       <DropdownMenuContent align="end" className="w-60">
         <div className="border-b px-2 py-2">
           <p className="truncate px-2 text-sm font-semibold">
-            {user?.name ?? "Guest builder"}
+            {displayName}
           </p>
           <p className="truncate px-2 pt-0.5 text-xs text-muted-foreground">
             {user?.email ?? "Anonymous session"}

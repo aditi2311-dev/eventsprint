@@ -274,9 +274,8 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
               </>
             )}
 
-            {/* Integrated Card Footer Branding */}
             <div className="bg-muted/50 border-t py-3 text-center text-xs text-muted-foreground">
-              Secured by <span className="underline cursor-pointer">EventSprints</span>
+              Secure sign-in for EventSprint
             </div>
           </Card>
         </div>
