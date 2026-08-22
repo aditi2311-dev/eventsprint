@@ -161,15 +161,6 @@ function ErrorDialog({
           <span className="text-xs text-zinc-500">
             Your error details are also available in chat.
           </span>
-          <a
-            href={`https://freebuff.com/project/${import.meta.env.VITE_VLY_APP_ID}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button className="bg-zinc-100 text-zinc-900 hover:bg-white">
-              <ExternalLink className="h-4 w-4" /> Open editor
-            </Button>
-          </a>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -272,7 +263,7 @@ export function InstrumentationProvider({
     const handleRejection = async (event: PromiseRejectionEvent) => {
       try {
         const normalizedError = normalizeError(event.reason);
-        console.error("[Freebuff runtime error]", normalizedError.error);
+        console.error("[Runtime error]", normalizedError.error);
         setError(normalizedError);
 
         await reportErrorToVly({

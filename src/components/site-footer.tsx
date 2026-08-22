@@ -74,7 +74,6 @@ export function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:px-6">
           <p>© 2026 EventSprint. Built for students, by students.</p>
-          <p>No backend required — your data stays in your browser.</p>
         </div>
       </div>
     </footer>

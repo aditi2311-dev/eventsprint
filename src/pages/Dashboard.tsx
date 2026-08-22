@@ -150,12 +150,19 @@ export default function Dashboard() {
     return best;
   }, []);
 
-  const firstName = useMemo(() => {
+ const firstName = useMemo(() => {
+    // Special override for your specific email
+    if (user?.email === "aditiagrawal.brh@gmail.com") return "Aditi";
+    
+    if (user?.email) {
+      const localPart = user.email.split("@")[0];
+      const tokens = localPart.split(/[._\-0-9]+/);
+      const rawFirst = tokens[0] || "";
+      return rawFirst.charAt(0).toUpperCase() + rawFirst.slice(1);
+    }
     if (user?.name) return user.name.trim().split(/\s+/)[0];
-    if (user?.email) return user.email.split("@")[0];
-    return "builder";
+    return "Builder";
   }, [user]);
-
   const initials = useMemo(() => {
     if (user?.name) {
       return user.name
