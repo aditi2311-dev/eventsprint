@@ -1,9 +1,5 @@
 [build]
-<<<<<<< HEAD
   command = "npx convex codegen && npm run build"
-=======
- command = "npx convex codegen && npm run build"
->>>>>>> 107956d884f93d3bff249414049a9e21189bb6d2
   publish = "dist"
 
 [build.environment]
@@ -11,7 +7,6 @@
   NODE_VERSION = "22"
 
 # SPA fallback: serve index.html for all client-side routes
-# (/, /events, /dashboard, /my-registrations, /auth, ...)
 [[redirects]]
   from = "/*"
   to = "/index.html"
